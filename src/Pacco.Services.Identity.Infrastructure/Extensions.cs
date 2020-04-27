@@ -94,6 +94,7 @@ namespace Pacco.Services.Identity.Infrastructure
                 .UseSwaggerDocs()
                 .UseJaeger()
                 .UseConvey()
+                .UseQoSCache()
                 .UseAccessTokenValidator()
                 .UseMongo()
                 .UsePublicContracts<ContractAttribute>()
