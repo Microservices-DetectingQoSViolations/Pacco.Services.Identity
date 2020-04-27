@@ -20,6 +20,7 @@ using Convey.MessageBrokers.RabbitMQ;
 using Convey.Metrics.AppMetrics;
 using Convey.Persistence.MongoDB;
 using Convey.Persistence.Redis;
+using Convey.QoS.Violation;
 using Convey.Tracing.Jaeger;
 using Convey.Tracing.Jaeger.RabbitMQ;
 using Convey.WebApi;
@@ -81,6 +82,7 @@ namespace Pacco.Services.Identity.Infrastructure
                 .AddRedis()
                 .AddMetrics()
                 .AddJaeger()
+                .AddQoSTrackingDecorators()
                 .AddMongoRepository<RefreshTokenDocument, Guid>("refreshTokens")
                 .AddMongoRepository<UserDocument, Guid>("users")
                 .AddWebApiSwaggerDocs();

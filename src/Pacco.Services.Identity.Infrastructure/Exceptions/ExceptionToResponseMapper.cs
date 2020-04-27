@@ -1,7 +1,7 @@
+using Convey.Exceptions;
+using Convey.WebApi.Exceptions;
 using System;
 using System.Net;
-using Convey.WebApi.Exceptions;
-using Pacco.Services.Identity.Core.Exceptions;
 
 namespace Pacco.Services.Identity.Infrastructure.Exceptions
 {

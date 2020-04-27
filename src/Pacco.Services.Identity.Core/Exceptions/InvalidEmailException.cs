@@ -1,3 +1,5 @@
+using Convey.Exceptions;
+
 namespace Pacco.Services.Identity.Core.Exceptions
 {
     public class InvalidEmailException : DomainException
