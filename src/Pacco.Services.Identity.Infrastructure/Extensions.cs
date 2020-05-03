@@ -82,7 +82,7 @@ namespace Pacco.Services.Identity.Infrastructure
                 .AddRedis()
                 .AddMetrics()
                 .AddJaeger()
-                .AddQoSTrackingDecorators()
+                .AddQoSViolation()
                 .AddMongoRepository<RefreshTokenDocument, Guid>("refreshTokens")
                 .AddMongoRepository<UserDocument, Guid>("users")
                 .AddWebApiSwaggerDocs();
@@ -94,7 +94,7 @@ namespace Pacco.Services.Identity.Infrastructure
                 .UseSwaggerDocs()
                 .UseJaeger()
                 .UseConvey()
-                .UseQoSCache()
+                .UseQoS()
                 .UseAccessTokenValidator()
                 .UseMongo()
                 .UsePublicContracts<ContractAttribute>()
