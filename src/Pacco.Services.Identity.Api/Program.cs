@@ -4,6 +4,7 @@ using Convey;
 using Convey.Auth;
 using Convey.Secrets.Vault;
 using Convey.Logging;
+using Convey.QoS.Violation.Runtime;
 using Convey.Types;
 using Convey.WebApi;
 using Microsoft.AspNetCore;
@@ -69,7 +70,8 @@ namespace Pacco.Services.Identity.Api
                             await ctx.RequestServices.GetService<IRefreshTokenService>().RevokeAsync(cmd.RefreshToken);
                             ctx.Response.StatusCode = 204;
                         })
-                    ))
+                    )
+                    .UseRuntimeMetrics())
                 .UseLogging()
                 .UseVault()
                 .Build()
